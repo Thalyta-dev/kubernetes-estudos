@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bd-noticias
+  labels:
+    app: bd-noticias
+spec:
+  containers:
+    - name: bd-noticias-container
+      image: aluracursos/mysql-db:1
+      ports:
+        - containerPort: 3306
+      envFrom:
+        - configMapRef:
+            name: bd-configmap
+
