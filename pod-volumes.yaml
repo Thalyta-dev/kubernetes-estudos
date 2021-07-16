@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volume
+spec:
+  containers:
+    - name: bd-noticias-container
+      image: aluracursos/mysql-db:1
+      volumeMounts:
+        - mountPath: /volume-dentro-container
+          name: primeiro-volume
+      envFrom:
+        - configMapRef:
+            name: bd-configmap
+  volumes:
+    - name: primeiro-volume
+      hostPath:
+        path: C:\Users\Thalyta.Correa\Documents\Projetos\kubernetes-volume
+        type: Directory

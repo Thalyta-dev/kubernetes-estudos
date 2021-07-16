@@ -1,0 +1,14 @@
+apiVersion: v1  #volumes para cloud
+kind: PersistenceVolume
+metadata:
+  name: pv-1
+spec:
+  - capacity:
+      storange: 10Gi
+  acessModes:
+    - ReadWriteOnce
+  gcePersistenceDisk:
+    pdName: pv-disk
+  storageClassName: standard
+
+  #cria um arquivo no cloud e ola essas infos acima, agora tem que fazer o claim é o arquivo pvc

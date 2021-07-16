@@ -1,0 +1,12 @@
+apiVersion: storange.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: slow
+  provisioner: kubernetes.io/gce-pd
+  parameters:
+    type: pd-standard
+    fstype: ext4
+
+
+##usa no cloud
+#para criar discos automagicamente/dinamicamente
